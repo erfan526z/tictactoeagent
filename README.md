@@ -42,4 +42,7 @@ This is a simple computer opponent for the classic TicTacToe game. It's written 
 The game is simple, You can click on each tile to fill it and the computer will response back with a move that is calculated using the selected algorithm. The winner is who could make 3 marks in a row or column or diagonally before the opponent.
 You can choose alogrythms using the menu at bottom of page and the computer uses new algorithm after a game restart which is done using the restart game button.
 
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
