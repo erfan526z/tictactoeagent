@@ -4,6 +4,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.GraphicsEnvironment;
+import java.io.File;
+import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -60,26 +63,26 @@ public class TicTacToeWindow {
 		
 		game_title = new JLabel("TicTacToe Agent");
 		game_title.setBounds(0, 10, WIDTH, 50);
-		game_title.setFont(new Font("C059", Font.BOLD, 32));
+		game_title.setFont(new Font("SansSerif", Font.ITALIC, 32));
 		game_title.setForeground(Color.WHITE);
 		game_title.setHorizontalAlignment(JLabel.CENTER);
 		content_pane.add(game_title);
 		
 		game_state_txt = new JLabel("Pick a tile");
 		game_state_txt.setBounds(0, 60, WIDTH, 50);
-		game_state_txt.setFont(new Font("C059", Font.PLAIN, 20));
+		game_state_txt.setFont(new Font("SansSerif", Font.PLAIN, 20));
 		game_state_txt.setForeground(Color.WHITE);
 		game_state_txt.setHorizontalAlignment(JLabel.CENTER);
 		content_pane.add(game_state_txt);
 		
 		game_agent_selector = new JComboBox<String>(agent_types);
 		game_agent_selector.setBounds(16, HEIGHT - 110, 128, 40);
-		game_agent_selector.setFont(new Font("C059", Font.PLAIN, 16));
+		game_agent_selector.setFont(new Font("SansSerif", Font.PLAIN, 16));
 		content_pane.add(game_agent_selector);
 		
 		game_reset = new JButton("Reset game");
 		game_reset.setBounds(160, HEIGHT - 110, 256, 40);
-		game_reset.setFont(new Font("C059", Font.PLAIN, 20));
+		game_reset.setFont(new Font("SansSerif", Font.PLAIN, 20));
 		game_reset.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -93,6 +96,8 @@ public class TicTacToeWindow {
 					game_tiles[i].setBackground(new Color(16, 48, 72));
 					game_tiles[i].setEnabled(true);
 				}
+				
+				game_state_txt.setText("Pick a tile.");
 			}
 		});
 		content_pane.add(game_reset);
@@ -108,7 +113,7 @@ public class TicTacToeWindow {
 			game_tiles[i].setBounds(WIDTH / 2 - 96 + 64 * row, HEIGHT / 2 - 96 + 64 * col, 64, 64);
 			game_tiles[i].setBackground(new Color(16, 48, 72));
 			game_tiles[i].setForeground(Color.WHITE);
-			game_tiles[i].setFont(new Font("C059", Font.BOLD, 32));
+			game_tiles[i].setFont(new Font("SansSerif", Font.BOLD, 32));
 			game_tiles[i].addActionListener(new ActionListener() {
 				private final int my_index = fi;
 				
